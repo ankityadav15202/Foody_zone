@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import styled from 'styled-components'
 import logo from '../src/assets/FoodyZone.svg'
 import { SearchResult } from './components/SearchResults/SearchResult';
-const BASE_URL = "http://localhost:9000/";
+export const BASE_URL = "http://localhost:9000";
 
 
 
@@ -71,7 +71,7 @@ const App = () => {
 
 export default App;
 
-const Container =styled.div`
+export const Container =styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `
@@ -99,7 +99,7 @@ const FillterContainer = styled.div`
   padding-bottom: 40px;
 `
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #ff4343;
   border-radius: 5px;
   color: white;
