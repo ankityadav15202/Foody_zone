@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color: #323334;
+    background-color: #771c0765;
     color: white;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;

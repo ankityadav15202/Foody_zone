@@ -47,6 +47,8 @@ const App = () => {
       return food.name.toLowerCase().includes(searchValue.toLowerCase())
     })
 
+    setselectBtn("all")
+
     setfilteredData(filter)
   }
 
@@ -88,6 +90,7 @@ const App = () => {
        { button.map((value,i)=>{
           return (
           <Button
+          isSelected = {selectBtn === value.toLowerCase()}
           onClick={()=> filteredFood(value.toLowerCase())}
           key={i}>
             {value}
@@ -108,7 +111,7 @@ export const Container =styled.div`
 `
 
 const TopContainer = styled.div`
-  min-height: 140px;
+  height: 140px;
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -120,7 +123,15 @@ const TopContainer = styled.div`
     border: 1px solid red;
     color: white;
     background-color: transparent;
+    &::placeholder{
+      color: white;
+    }
   } 
+
+  @media (0 < width < 600px){
+    flex-direction: column;
+    height: 120px;
+  }
 `
 
 const FillterContainer = styled.div`
@@ -131,7 +142,9 @@ const FillterContainer = styled.div`
 `
 
 export const Button = styled.button`
-  background-color: #ff4343;
+  background: ${({isSelected})=> isSelected ? "#ff0000" : "#ff4343"} ;
+  outline: 1px solid ${({isSelected})=> isSelected ? "white" : "#ff4343"} ;
+
   border-radius: 5px;
   color: white;
   border: none;
@@ -142,4 +155,5 @@ export const Button = styled.button`
     cursor: pointer;
     background-color: #ff0000;
   }
+
 `
